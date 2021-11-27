@@ -1,0 +1,11 @@
+#lang racket
+
+;;Grupo :
+;;Integrantes; Neil Balcero- Camila PLazas
+;;Ejercicio 1
+;;A :(lista de 3 números) -> número
+
+;; Ingresando los parámetros: valor presente(P), tasa de interés(i) y número de meses (n), se obtiene A (fórmula de recuperación del capital)
+
+(define (fórmula-factor-recuperación-capital P i n)
+  (* P (/ (* i (expt (+ 1 i) n)) (- (expt (+ 1 i) n) 1) )))

@@ -1,0 +1,32 @@
+#lang racket
+(require 2htdp/image)
+(require lang/posn)
+(define s 20)
+ (define (orbita1)(overlay/align
+  "left" "middle"                
+  (circle (* 0.1 s) "solid" "red")
+  (ellipse (* s 14) (* s 6) "outline" "white")
+    ))
+(define (orbita2)(overlay/align
+  "right" "middle"                
+  (circle (* 0.15 s) "solid" "pink")
+  (ellipse (* s 23) (* s 10) "outline" "white")
+    ))
+(define (orbita3)(overlay/align
+  "left" "middle"                
+  (circle (* 0.2 s) "solid" "blue")
+  (ellipse (* s 27) (* s 12) "outline" "white")
+    ))
+  (define (ss s);;s es el tamaño del sol
+(overlay (orbita1)
+         (orbita2)
+         (orbita3)
+         (ellipse s s "solid" "Light orange")
+         (rectangle(* 50 s) (* 30 s) "solid" "black")))
+
+
+
+    
+          
+  
+                
