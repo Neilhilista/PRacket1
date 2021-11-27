@@ -1,7 +1,0 @@
-#lang racket
-;;Grupo :9
-;;Integrantes; Neil Balcero- Camila PLazas- Julián Álvarez
-;;Ejercicio 5
-;;A: R3 -> R1
-
-;; Ingresando los parámetros: valor presente(P), tasa de interés(i) y número de meses (n), se obtiene A (fórmula de recuperación del capital)
