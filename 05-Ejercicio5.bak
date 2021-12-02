@@ -18,7 +18,7 @@
 
 
 (define (primerArea H R)
-  (* R (sqrt (- (* H H) (* R R))))
+  (* 2 R (sqrt (-(* H H) (* R R))))
 )
 
 
@@ -31,7 +31,7 @@
   (cond
     [(or (string? H) (string? R)) (print "Lo siento, no puede ingresar cadenas en el programa")]
     [(and (>= H 0) (>= R 0)) (+ (primerArea H R) (segundaArea R))]
-    [else (print "Lo siento, ni la longitud (H) ni el radio (R) pueden ser negativos")]
+    [else (print "Lo siento, ni la altura (H) ni el radio (R) pueden ser negativos")]
      )
     )
 
