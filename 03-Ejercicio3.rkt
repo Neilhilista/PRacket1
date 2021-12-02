@@ -13,6 +13,7 @@
 (println "Normas:")
 (println "Escriba (PASAS) Para ver el modelo atomico de JJ Thomson de 1904")
 (println "Escriba (RUTHERFORD) Para ver el modelo atomico de Rutherford de 1911")
+(println "Escriba (BORH) Para ver el modelo atomico de Rutherford de 1913")
 
 
 (define borde (center-pinhole (circle 12 "solid" "black")))
@@ -60,4 +61,16 @@
 (define atomoTT9 (overlay/pinhole electron (put-pinhole 100 120 atomoTT8)))
 (define atomoTT10 (overlay/pinhole proton (put-pinhole 100 30 atomoTT9)))
 (define atomoTT11 (overlay/pinhole electron (put-pinhole 180 150 atomoTT10)))
-(define (PASAS)(overlay/pinhole electron (put-pinhole 100 180 atomoTT11)))
+(define (PASAS) (clear-pinhole (overlay/pinhole electron (put-pinhole 100 180 atomoTT11))))
+
+
+;;Codigo que genera el modelo atomico de Bohr
+
+(define primerOrbita (overlay/pinhole nucleo (circle 50 "solid" "white") (circle 53 "solid" "black")))
+(define segundaOrbita (overlay/pinhole nucleo (circle 80 "solid" "white") (circle 83 "solid" "black")))
+(define primerElectron (overlay/pinhole electron (put-pinhole 1 50 primerOrbita)))
+(define segundoElectron (clear-pinhole (overlay/pinhole electron (put-pinhole 115 50 primerElectron))))
+(define atomoDosOrbitas (overlay/pinhole segundoElectron segundaOrbita))
+(define (BOHR) (clear-pinhole (overlay/pinhole electron (put-pinhole 80 1 atomoDosOrbitas))))
+
+
